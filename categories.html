@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - SmartMart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-page="categories">
+    <div class="top-bar">
+        <div class="top-bar-links">
+            <div class="auth-btns">
+                <a href="login.php" class="btn btn-login">Login</a>
+                <a href="register.php" class="btn btn-register">Register</a>
+            </div>
+            <div class="utility-links">
+                <a href="#">Fresh arrivals daily</a> |
+                <a href="contact.html">Support</a> |
+                <a href="order-tracking.html">Track Order</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.php">SMARTMART</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="categories.html" class="active">Categories</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="order-tracking.html">Order Tracking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <div class="search-box">
+                <input type="text" id="categorySearch" placeholder="Search a category">
+            </div>
+            <a href="cart.html" class="cart-button">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" data-cart-count>0</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="page-hero categories-hero">
+        <div class="page-hero-copy">
+            <p class="eyebrow">Smart shopping starts here</p>
+            <h1>Pick a category, stock your basket, and check out in minutes.</h1>
+            <p>Browse curated aisles for fresh produce, dairy, pantry staples, and premium proteins.</p>
+            <a href="products.html" class="btn btn-dark">Browse All Products</a>
+        </div>
+    </section>
+
+    <main class="section-padding">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Shop by aisle</p>
+                <h2 class="section-title">Featured categories</h2>
+            </div>
+            <a href="products.html" class="section-link">View full catalog</a>
+        </div>
+
+        <div class="category-page-grid" id="categoryGrid">
+            <a class="category-tile category-fruits" href="products.html?category=fruits" data-category="fruits">
+                <span>Fresh Fruits</span>
+                <small>Crisp, sweet, and ready today</small>
+            </a>
+            <a class="category-tile category-vegetables" href="products.html?category=vegetables" data-category="vegetables">
+                <span>Vegetables</span>
+                <small>Leafy greens and everyday essentials</small>
+            </a>
+            <a class="category-tile category-dairy" href="products.html?category=dairy" data-category="dairy">
+                <span>Dairy & Eggs</span>
+                <small>Cold, creamy, and breakfast-ready</small>
+            </a>
+            <a class="category-tile category-meat" href="products.html?category=meat" data-category="meat">
+                <span>Meat & Seafood</span>
+                <small>Premium cuts and clean proteins</small>
+            </a>
+            <a class="category-tile category-pantry" href="products.html?category=pantry" data-category="pantry">
+                <span>Pantry Staples</span>
+                <small>Rice, oils, grains, and more</small>
+            </a>
+            <a class="category-tile category-beverages" href="products.html?category=beverages" data-category="beverages">
+                <span>Beverages</span>
+                <small>Juices, water, coffee, and tea</small>
+            </a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

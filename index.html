@@ -1,0 +1,104 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMart Retail Supermarket</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body data-page="home">
+
+    <!-- 1. TOP UTILITY BAR -->
+    <div class="top-bar">
+        <div class="top-bar-links">
+            <div class="auth-btns">
+                <?php if(isset($_SESSION['user'])): ?>
+                    <span style="margin-right:10px; font-weight:600;">
+                        Welcome <?php echo $_SESSION['user']; ?>
+                    </span>
+                    <a href="logout.php" class="btn btn-login">Logout</a>
+                <?php else: ?>
+                    <a href="login.php" class="btn btn-login">Login</a>
+                    <a href="register.php" class="btn btn-register">Register</a>
+                <?php endif; ?>
+            </div>
+            <div class="utility-links">
+                <a href="#">العربية</a> | 
+                <a href="#">Find a Store</a> | 
+                <a href="#">Help</a> | 
+                <a href="#">Join Us</a> | 
+                <a href="#">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MAIN NAVIGATION -->
+    <header class="site-header">
+        <div class="logo">
+            <h1 style="font-style: italic; letter-spacing: -2px;">SMARTMART</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="order-tracking.html">Order Tracking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <div class="search-box">
+                <input type="text" placeholder="Search Freshness">
+            </div>
+            <i class="far fa-heart"></i>
+            <a href="cart.html" class="cart-button">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" data-cart-count>0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 3. ANNOUNCEMENT BAR -->
+    <div class="announcement">
+        <p>FREE DELIVERY ACROSS UAE. ORGANIC. LOCAL. FAST. <a href="#">Shop Now</a></p>
+    </div>
+
+    <!-- 4. HERO SECTION (Nike Style) -->
+    <section class="hero" id="home">
+        <div class="hero-image">
+            <div class="hero-text">
+                <p>Seasonal Pick: Organic Berries</p>
+                <h1>PURE ENERGY.</h1>
+                <p>Farm-to-table freshness. Delivered in 60 minutes.</p>
+                <div class="hero-btns">
+                    <a href="products.html" class="btn btn-dark">Shop Now</a>
+                    <a href="categories.html" class="btn btn-light">View Categories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CATEGORIES SECTION -->
+    <section class="section-padding" id="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="grid-container">
+            <a class="category-card category-fruits" href="products.html?category=fruits"><span>Fresh Fruits</span></a>
+            <a class="category-card category-vegetables" href="products.html?category=vegetables"><span>Vegetables</span></a>
+            <a class="category-card category-dairy" href="products.html?category=dairy"><span>Dairy & Eggs</span></a>
+            <a class="category-card category-meat" href="products.html?category=meat"><span>Organic Meat</span></a>
+        </div>
+    </section>
+
+    <!-- 6. CHAT BUTTON -->
+    <div class="chat-float">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

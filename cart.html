@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - SmartMart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-page="cart">
+    <div class="top-bar">
+        <div class="top-bar-links">
+            <div class="auth-btns">
+                <a href="login.php" class="btn btn-login">Login</a>
+                <a href="register.php" class="btn btn-register">Register</a>
+            </div>
+            <div class="utility-links">
+                <a href="products.html">Continue shopping</a> |
+                <a href="contact.html">Help</a> |
+                <a href="order-tracking.html">Track Order</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.php">SMARTMART</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html" class="active">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <a href="cart.html" class="cart-button active">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" data-cart-count>0</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="page-hero cart-hero">
+        <div class="page-hero-copy">
+            <p class="eyebrow">Checkout</p>
+            <h1>Your basket, ready for delivery.</h1>
+            <p>Manage quantities, apply a voucher, switch your currency, and place your order in one flow.</p>
+        </div>
+    </section>
+
+    <main class="section-padding">
+        <section class="cart-layout">
+            <div class="cart-list-panel">
+                <div class="section-heading compact">
+                    <div>
+                        <p class="eyebrow">Cart items</p>
+                        <h2 class="section-title">Review your basket</h2>
+                    </div>
+                    <a href="products.html" class="section-link">Add more items</a>
+                </div>
+                <div class="cart-items-list" id="cartItemsList"></div>
+                <div class="empty-state hidden" id="emptyCartState">
+                    <h3>Your cart is empty.</h3>
+                    <p>Start with fresh groceries and they will appear here instantly.</p>
+                    <a href="products.html" class="btn btn-dark">Shop Products</a>
+                </div>
+            </div>
+
+            <aside class="cart-summary-panel">
+                <div class="summary-card">
+                    <div class="summary-header">
+                        <div>
+                            <p class="eyebrow">Order summary</p>
+                            <h3>Cart Total</h3>
+                        </div>
+                    </div>
+
+                    <label class="field-label" for="locationSelect">Select location / currency</label>
+                    <select id="locationSelect" class="select-field">
+                        <option value="AED">United Arab Emirates (AED)</option>
+                        <option value="USD">United States (USD)</option>
+                        <option value="EUR">Europe (EUR)</option>
+                        <option value="SAR">Saudi Arabia (SAR)</option>
+                    </select>
+
+                    <div class="voucher-row">
+                        <input type="text" id="voucherCode" class="input-field" placeholder="Voucher code">
+                        <button class="btn btn-dark" id="applyVoucherBtn" type="button">Apply</button>
+                    </div>
+                    <p class="inline-message" id="voucherMessage"></p>
+
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <strong id="cartSubtotal">AED 0.00</strong>
+                    </div>
+                    <div class="summary-line">
+                        <span>Discount</span>
+                        <strong id="cartDiscount">AED 0.00</strong>
+                    </div>
+                    <div class="summary-line total-line">
+                        <span>Total</span>
+                        <strong id="cartTotal">AED 0.00</strong>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <p class="eyebrow">Place order</p>
+                    <h3>Delivery details</h3>
+                    <form id="orderForm" class="order-form" novalidate>
+                        <input type="text" id="customerName" class="input-field" placeholder="Full name">
+                        <input type="email" id="customerEmail" class="input-field" placeholder="Email address">
+                        <input type="tel" id="customerPhone" class="input-field" placeholder="Phone number">
+                        <textarea id="customerAddress" class="input-field textarea-field" placeholder="Delivery address"></textarea>
+                        <select id="paymentMethod" class="select-field">
+                            <option value="">Select payment method</option>
+                            <option value="card">Card on delivery</option>
+                            <option value="cash">Cash on delivery</option>
+                            <option value="online">Pay online</option>
+                        </select>
+                        <button type="submit" class="btn btn-dark btn-full">Place Order</button>
+                    </form>
+                    <p class="inline-message" id="orderMessage"></p>
+                    <div class="confirmation-box hidden" id="confirmationBox"></div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

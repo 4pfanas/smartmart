@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - SmartMart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-page="products">
+    <div class="top-bar">
+        <div class="top-bar-links">
+            <div class="auth-btns">
+                <a href="login.php" class="btn btn-login">Login</a>
+                <a href="register.php" class="btn btn-register">Register</a>
+            </div>
+            <div class="utility-links">
+                <a href="categories.html">Categories</a> |
+                <a href="contact.html">Support</a> |
+                <a href="order-tracking.html">Track Order</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.php">SMARTMART</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="order-tracking.html">Order Tracking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <div class="search-box">
+                <input type="text" id="productSearch" placeholder="Search products">
+            </div>
+            <a href="cart.html" class="cart-button">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" data-cart-count>0</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="page-hero products-hero">
+        <div class="page-hero-copy">
+            <p class="eyebrow">Fresh picks</p>
+            <h1>Shop seasonal favorites, pantry staples, and everyday essentials.</h1>
+            <p>Filter by category, search quickly, and add products straight into your cart.</p>
+        </div>
+    </section>
+
+    <main class="section-padding">
+        <section class="catalog-layout">
+            <aside class="catalog-sidebar">
+                <div class="filter-card">
+                    <p class="eyebrow">Filter</p>
+                    <h3>Categories</h3>
+                    <div class="category-filter-list" id="categoryFilters">
+                        <button class="filter-chip active" data-filter="all">All</button>
+                        <button class="filter-chip" data-filter="fruits">Fruits</button>
+                        <button class="filter-chip" data-filter="vegetables">Vegetables</button>
+                        <button class="filter-chip" data-filter="dairy">Dairy & Eggs</button>
+                        <button class="filter-chip" data-filter="meat">Meat & Seafood</button>
+                        <button class="filter-chip" data-filter="pantry">Pantry</button>
+                        <button class="filter-chip" data-filter="beverages">Beverages</button>
+                    </div>
+                </div>
+                <div class="filter-card highlight-card">
+                    <p class="eyebrow">Delivery promise</p>
+                    <h3>Fresh in under 60 minutes across Dubai.</h3>
+                    <p>Every item in this catalog can be added to the local cart and checked out instantly.</p>
+                </div>
+            </aside>
+
+            <section class="catalog-main">
+                <div class="section-heading compact">
+                    <div>
+                        <p class="eyebrow">Catalog</p>
+                        <h2 class="section-title">Available products</h2>
+                    </div>
+                    <a href="cart.html" class="section-link">Go to cart</a>
+                </div>
+                <div class="product-grid enhanced-grid" id="productGrid"></div>
+                <div class="empty-state hidden" id="productsEmptyState">
+                    <h3>No products matched that search.</h3>
+                    <p>Try a different keyword or switch back to another category.</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
