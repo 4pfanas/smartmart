@@ -14,6 +14,9 @@ A complete front-end supermarket storefront: browse, search, filter, build a bas
 
 </div>
 
+**Live demo:** https://4pfanas.github.io/smartmart/
+
+
 ---
 
 ## Table of contents
